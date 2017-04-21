@@ -1,0 +1,228 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/gleero/grunt-favicons"
+
+    >grunt-favicons (v0.8.0)</a>
+</h1>
+<h4>Generate favicon.ico and icons for iOS, Android, Windows and Firefox (OS)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-favicons">module grunt-favicons</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-favicons.grunt-favicons">
+            function <span class="apidocSignatureSpan"></span>grunt-favicons
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-favicons" id="apidoc.module.grunt-favicons">module grunt-favicons</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-favicons.grunt-favicons" id="apidoc.element.grunt-favicons.grunt-favicons">
+        function <span class="apidocSignatureSpan"></span>grunt-favicons
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-favicons = function (grunt) {
+
+    grunt.initConfig({
+
+        jshint: {
+            files: [
+                &#x27;tasks/favicons.js&#x27;,
+                &#x27;Gruntfile.js&#x27;
+            ],
+            options: {
+                jshintrc: &#x27;.jshintrc&#x27;
+            }
+        },
+
+        favicons: {
+            stage1: {
+                src: &#x27;test/test.png&#x27;,
+                dest: &#x27;test/out&#x27;
+            },
+            stage2: {
+                options: {
+                    html: &#x27;test/out/test.html&#x27;,
+                    trueColor: true,
+                    HTMLPrefix: &#x22;/images/icons/&#x22;,
+                    windowsTile: false,
+                    precomposed: false,
+                    appleTouchBackgroundColor: &#x22;#a0b4bb&#x22;,
+                    appleTouchPadding: 25,
+                    firefox: true,
+                    sharp: 1,
+                    debug: true,
+                    firefoxManifest: &#x27;test/out/manifest.webapp&#x27;,
+                    androidHomescreen: true
+                },
+                src: &#x27;test/test.png&#x27;,
+                dest: &#x27;test/out&#x27;
+            },
+            stage3: {
+                options: {
+                    html: &#x27;test/out/test.php&#x27;,
+                    HTMLPrefix: &#x22;&#x3c;?= SITE_TEMPLATE_PATH; ?&#x3e;/icons/&#x22;,
+                    windowsTile: true,
+                    appleTouchPadding: 0,
+                    tileColor: &#x22;none&#x22;,
+                    firefox: true,
+                    firefoxRound: true,
+                    coast: true
+                },
+                src: &#x27;test/img.jpg&#x27;,
+                dest: &#x27;test/out&#x27;
+            },
+            stage4: {
+                options: {
+                    html: &#x27;test/out/test.html.twig&#x27;,
+                    HTMLPrefix: &#x27;{{ releaseDir }}/icons/&#x27;,
+                    trueColor: true,
+                    precomposed: true,
+                    appleTouchBackgroundColor: &#x22;#a0b4bb&#x22;,
+                    coast: true,
+                    apple: false,
+                    regular: false,
+                    windowsTile: true,
+                    tileBlackWhite: false,
+                    tileColor: &#x27;auto&#x27;
+                },
+                src: &#x27;test/img.jpg&#x27;,
+                dest: &#x27;test/out&#x27;
+            },
+            stage5: {
+              options: {
+                html: &#x27;test/out/test.html.indent&#x27;,
+                trueColor: true,
+                HTMLPrefix: &#x22;/images/icons/&#x22;,
+                windowsTile: false,
+                precomposed: false,
+                appleTouchBackgroundColor: &#x22;#a0b4bb&#x22;,
+                appleTouchPadding: 25,
+                firefox: true,
+                sharp: 1,
+                debug: true,
+                firefoxManifest: &#x27;test/out/manifest.webapp&#x27;,
+                androidHomescreen: true,
+                indent: &#x27;  &#x27;
+              },
+              src: &#x27;test/test.png&#x27;,
+              dest: &#x27;test/out&#x27;
+            }
+        },
+
+        copy: {
+            html: {
+                src: &#x27;test/index.html&#x27;,
+                dest: &#x27;test/out/test.html&#x27;
+            },
+            php: {
+                src: &#x27;test/index.html&#x27;,
+                dest: &#x27;test/out/test.php&#x27;
+            },
+            manifest: {
+                src: &#x27;test/manifest.webapp&#x27;,
+                dest: &#x27;test/out/manifest.webapp&#x27;
+            },
+            indent: {
+                src: &#x27;test/index.html&#x27;,
+                dest: &#x27;test/out/test.html.indent&#x27;
+            }
+        },
+
+        nodeunit: {
+            stage1: [&#x27;test/test_stage1.js&#x27;],
+            stage2: [&#x27;test/test_stage2.js&#x27;],
+            stage3: [&#x27;test/test_stage3.js&#x27;],
+            stage4: [&#x27;test/test_stage4.js&#x27;],
+            stage5: [&#x27;test/test_stage5.js&#x27;]
+        },
+
+        clean: [&#x27;test/out&#x27;]
+    });
+
+    grunt.loadNpmTasks(&#x27;grunt-contrib-jshint&#x27;);
+    grunt.loadNpmTasks(&#x27;grunt-contrib-nodeunit&#x27;);
+    grunt.loadNpmTasks(&#x27;grunt-contrib-copy&#x27;);
+    grunt.loadNpmTasks(&#x27;grunt-contrib-clean&#x27;);
+    grunt.loadTasks(&#x27;tasks&#x27;);
+
+    // Default options
+    grunt.registerTask(&#x27;stage1&#x27;, [&#x27;clean&#x27;, &#x27;copy&#x27;, &#x27;favicons:stage1&#x27;, &#x27;nodeunit:stage1&#x27;]);
+    grunt.registerTask(&#x27;stage2&#x27;, [&#x27;clean&#x27;, &#x27;copy&#x27;, &#x27;favicons:stage2&#x27;, &#x27;nodeunit:stage2&#x27;]);
+    grunt. ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
